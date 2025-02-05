@@ -1,6 +1,6 @@
 package main
 
-import "fmt"
+// import "fmt"
 
 const englishHelloPrefix = "Hello "
 const banglaHelloPrefix = "আসসালামুয়ালাইকুম "
@@ -23,6 +23,6 @@ func message(name string, language string) string {
 	return prefix + name
 }
 
-func main() {
-	fmt.Println(message("Rajibul", "Bangla"))
-}
+// func main() {
+// 	fmt.Println(message("Rajibul", "Bangla"))
+// }
