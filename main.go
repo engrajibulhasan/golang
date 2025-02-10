@@ -6,7 +6,32 @@ import (
 	"hello_world/iterations"
 )
 
+func FindPrime(n int) []int {
+	if n <= 2 {
+		return nil
+	}
 
+	sieveList := make([]bool, n+1)
+	for x := 2; x < n; x++ {
+		sieveList[x] = true
+	}
+	for curr := 2; curr < n; curr++ {
+		if sieveList[curr] {
+			for multiple := curr * curr; multiple < n; multiple += curr {
+				sieveList[multiple] = false
+			}
+		}
+	}
+
+	var primeList []int
+	for curr := 0; curr < n; curr++ {
+		if sieveList[curr] {
+			primeList = append(primeList, curr)
+		}
+	}
+
+	return primeList
+}
 
 func main(){
 
@@ -35,6 +60,11 @@ func main(){
 	x := make([]int, 5,5) 
 	x = append(x, 20)
 	fmt.Println(x)
+ 
+	
+	
+	fmt.Println(FindPrime(50))
+	// [2 3 5 7 11 13 17 19 23 29 31 37 41 43 47]
 	
 	// //This creates an `int` slice with a length of 5 and a capacity of 10
 	// x := make([]int, 5, 10)
