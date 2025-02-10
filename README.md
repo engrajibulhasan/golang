@@ -1,8 +1,7 @@
 # golang cmd
-go version
-go env
-
-go run .
+- go version
+- go env
+- go run .
 
 ## Testing
 - go test (No file name needed (file name will throw error and its not a convention), just go to directory and run the command.)
